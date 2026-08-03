@@ -1,0 +1,8 @@
+{
+  "name": "unifi_get_health",
+  "description": "Get health status of UniFi UDM Pro network subsystems (WAN, LAN, WLAN, VPN, ISP details, CPU/Memory usage).",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}

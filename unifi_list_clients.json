@@ -1,0 +1,8 @@
+{
+  "name": "unifi_list_clients",
+  "description": "List active connected client devices on the UniFi network (IP, MAC, hostname, signal, bandwidth, network).",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}

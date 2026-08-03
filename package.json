@@ -1,0 +1,13 @@
+{
+  "name": "unifi-udm-pro-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server for UniFi Dream Machine Pro (UDM Pro) Network Management",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

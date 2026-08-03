@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+test_*.js
+example_*.png
+unifi_*.png
+.DS_Store
