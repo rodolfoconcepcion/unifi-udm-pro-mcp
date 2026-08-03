@@ -1,0 +1,8 @@
+{
+  "name": "unifi_list_wlans",
+  "description": "List all configured Wi-Fi SSIDs, security modes, frequency bands, and enabled status.",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}

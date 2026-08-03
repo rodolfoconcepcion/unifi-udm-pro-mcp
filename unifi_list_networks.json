@@ -1,0 +1,8 @@
+{
+  "name": "unifi_list_networks",
+  "description": "List all configured network subnets, VLANs, gateway IPs, DHCP ranges, and DNS settings.",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}

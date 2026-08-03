@@ -1,0 +1,8 @@
+{
+  "name": "unifi_list_devices",
+  "description": "List all UniFi access points, switches, gateways, uptime, IP addresses, and adoption status.",
+  "parameters": {
+    "type": "object",
+    "properties": {}
+  }
+}
