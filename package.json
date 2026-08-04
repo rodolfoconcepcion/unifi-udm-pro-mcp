@@ -1,9 +1,28 @@
 {
   "name": "unifi-udm-pro-mcp",
   "version": "1.0.0",
-  "description": "MCP Server for UniFi Dream Machine Pro (UDM Pro) Network Management",
+  "description": "High-performance native Model Context Protocol (MCP) server for Ubiquiti UniFi UDM Pro / UDM SE and UniFi OS Cloud Gateways with 40 tools",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "unifi-udm-pro-mcp": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "unifi",
+    "udm-pro",
+    "ubiquiti",
+    "claude",
+    "antigravity",
+    "ai-agent"
+  ],
+  "author": "Rodolfo Concepcion",
+  "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },
