@@ -7,24 +7,45 @@
   "bin": {
     "unifi-udm-pro-mcp": "./index.js"
   },
+  "files": [
+    "index.js",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp.git"
+  },
+  "homepage": "https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/issues"
   },
   "keywords": [
     "mcp",
     "model-context-protocol",
     "unifi",
     "udm-pro",
+    "udm-se",
     "ubiquiti",
     "claude",
     "antigravity",
-    "ai-agent"
+    "ai-agent",
+    "smart-home",
+    "network",
+    "firewall",
+    "iot"
   ],
   "author": "Rodolfo Concepcion",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "check": "node --check index.js",
+    "prepublishOnly": "node --check index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"

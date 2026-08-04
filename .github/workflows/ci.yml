@@ -1,4 +1,4 @@
-name: CI & Docker Build Check
+name: CI
 
 on:
   push:
@@ -10,19 +10,26 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [20, 22]
+
     steps:
       - uses: actions/checkout@v5
 
-      - name: Set up Node.js
+      - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm ci
 
       - name: Validate syntax
         run: node --check index.js
+
+      - name: Security audit
+        run: npm audit --audit-level=high || true
 
       - name: Build Docker image
         run: docker build -t unifi-udm-pro-mcp .

@@ -1,7 +1,10 @@
 # UniFi UDM Pro MCP Server (`unifi-udm-pro-mcp`)
 
+[![CI](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MCP Protocol](https://img.shields.io/badge/MCP-v1.0.0-blue.svg)](https://modelcontextprotocol.io)
+[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A520-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![GitHub stars](https://img.shields.io/github/stars/rodolfoconcepcion/unifi-udm-pro-mcp?style=social)](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp)
 
 A high-performance, native **Model Context Protocol (MCP)** server for Ubiquiti **UniFi Dream Machine (UDM / UDM Pro / UDM SE)** and UniFi OS Cloud Gateways. 
 

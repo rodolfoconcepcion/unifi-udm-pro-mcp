@@ -1,0 +1,89 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of unifi-udm-pro-mcp are you using?
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mcp-client
+    attributes:
+      label: MCP Client
+      description: Which MCP client are you using?
+      options:
+        - Claude Desktop
+        - Antigravity / AGY CLI
+        - Cursor
+        - Windsurf
+        - VS Code + Copilot
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: udm-model
+    attributes:
+      label: UniFi Console Model
+      description: What UniFi hardware are you using?
+      placeholder: "UDM Pro, UDM SE, UCG Ultra, etc."
+    validations:
+      required: true
+
+  - type: input
+    id: unifi-os
+    attributes:
+      label: UniFi OS Version
+      description: What version of UniFi OS is your console running?
+      placeholder: "4.1.6"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is.
+      placeholder: "When I call unifi_list_clients, I get..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this issue?
+      placeholder: |
+        1. Configure MCP with...
+        2. Call tool...
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: Paste any relevant error messages or logs (redact API keys!)
+      render: shell
+    validations:
+      required: false
