@@ -4,7 +4,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import https from "https";
 
-const UNIFI_HOST = process.env.UNIFI_HOST || "https://192.168.1.1";
+const UNIFI_HOST = process.env.UNIFI_HOST || "https://YOUR_UNIFI_HOST_IP";
 const UNIFI_API_KEY = process.env.UNIFI_API_KEY || "";
 
 const agent = new https.Agent({ rejectUnauthorized: false });

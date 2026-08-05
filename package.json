@@ -1,30 +1,53 @@
 {
   "name": "unifi-udm-pro-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance native Model Context Protocol (MCP) server for Ubiquiti UniFi UDM Pro / UDM SE and UniFi OS Cloud Gateways with 40 tools",
   "main": "index.js",
   "type": "module",
   "bin": {
     "unifi-udm-pro-mcp": "./index.js"
   },
+  "mcpName": "io.github.rodolfoconcepcion/unifi-udm-pro-mcp",
+  "files": [
+    "index.js",
+    "package.json",
+    "server.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp.git"
+  },
+  "homepage": "https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/issues"
   },
   "keywords": [
     "mcp",
     "model-context-protocol",
     "unifi",
     "udm-pro",
+    "udm-se",
     "ubiquiti",
     "claude",
     "antigravity",
-    "ai-agent"
+    "ai-agent",
+    "smart-home",
+    "network",
+    "firewall",
+    "iot"
   ],
   "author": "Rodolfo Concepcion",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "check": "node --check index.js",
+    "prepublishOnly": "node --check index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0"

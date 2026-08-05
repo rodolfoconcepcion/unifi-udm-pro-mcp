@@ -10,7 +10,7 @@ startCommand:
     properties:
       UNIFI_HOST:
         type: string
-        description: "The IP or hostname of your UniFi OS console (e.g., https://192.168.1.1)"
+        description: "The IP or hostname of your UniFi OS console (e.g., https://YOUR_UNIFI_HOST_IP)"
       UNIFI_API_KEY:
         type: string
         description: "Your UniFi Local API Key generated from UDM Control Plane -> Integrations"

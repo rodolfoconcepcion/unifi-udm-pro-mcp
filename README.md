@@ -1,7 +1,10 @@
 # UniFi UDM Pro MCP Server (`unifi-udm-pro-mcp`)
 
+[![CI](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MCP Protocol](https://img.shields.io/badge/MCP-v1.0.0-blue.svg)](https://modelcontextprotocol.io)
+[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A520-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![GitHub stars](https://img.shields.io/github/stars/rodolfoconcepcion/unifi-udm-pro-mcp?style=social)](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp)
 
 A high-performance, native **Model Context Protocol (MCP)** server for Ubiquiti **UniFi Dream Machine (UDM / UDM Pro / UDM SE)** and UniFi OS Cloud Gateways. 
 
@@ -82,18 +85,88 @@ Unlike legacy UniFi MCP implementations that rely on cloud session cookies, user
 
 ---
 
+## Quick Start
+
+### Option 1: npx (Recommended)
+
+No installation needed:
+
+```bash
+UNIFI_HOST=https://YOUR_UNIFI_HOST_IP UNIFI_API_KEY=your_key npx unifi-udm-pro-mcp
+```
+
+### Option 2: Docker
+
+```bash
+docker run -e UNIFI_HOST=https://YOUR_UNIFI_HOST_IP -e UNIFI_API_KEY=your_key ghcr.io/rodolfoconcepcion/unifi-udm-pro-mcp
+```
+
+### Option 3: Manual Install
+
+```bash
+git clone https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp.git
+cd unifi-udm-pro-mcp
+npm install
+UNIFI_HOST=https://YOUR_UNIFI_HOST_IP UNIFI_API_KEY=your_key node index.js
+```
+
+---
+
 ## Configuration
 
-Add to your MCP Client config (e.g. `claude_desktop_config.json` or Antigravity MCP settings):
+> [!NOTE]
+> `UNIFI_HOST` must include the `https://` protocol prefix (e.g., `https://192.168.0.1`). UniFi OS requires HTTPS for local REST API access. Self-signed SSL/TLS certificates on local console IPs are handled automatically.
+
+### Claude Desktop / Antigravity
+
+Add to `claude_desktop_config.json` or Antigravity MCP settings:
 
 ```json
 {
   "mcpServers": {
     "unifi-udm-pro": {
-      "command": "node",
-      "args": ["/path/to/unifi-udm-pro-mcp/index.js"],
+      "command": "npx",
+      "args": ["-y", "unifi-udm-pro-mcp"],
       "env": {
-        "UNIFI_HOST": "https://192.168.1.1",
+        "UNIFI_HOST": "https://YOUR_UNIFI_HOST_IP",
+        "UNIFI_API_KEY": "YOUR_UNIFI_LOCAL_API_KEY"
+      }
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot)
+
+Add to your project's `.vscode/mcp.json` or user settings:
+
+```json
+{
+  "servers": {
+    "unifi-udm-pro": {
+      "command": "npx",
+      "args": ["-y", "unifi-udm-pro-mcp"],
+      "env": {
+        "UNIFI_HOST": "https://YOUR_UNIFI_HOST_IP",
+        "UNIFI_API_KEY": "YOUR_UNIFI_LOCAL_API_KEY"
+      }
+    }
+  }
+}
+```
+
+### Cursor / Windsurf
+
+Add to your MCP settings (Settings → MCP Servers):
+
+```json
+{
+  "mcpServers": {
+    "unifi-udm-pro": {
+      "command": "npx",
+      "args": ["-y", "unifi-udm-pro-mcp"],
+      "env": {
+        "UNIFI_HOST": "https://YOUR_UNIFI_HOST_IP",
         "UNIFI_API_KEY": "YOUR_UNIFI_LOCAL_API_KEY"
       }
     }
@@ -104,11 +177,22 @@ Add to your MCP Client config (e.g. `claude_desktop_config.json` or Antigravity 
 ---
 
 ## How to Obtain a UniFi API Key
-1. Log into your UniFi Console (`https://192.168.1.1/`).
-2. Go to **Control Plane Settings** -> **Integrations** (or API Keys).
-3. Click **Add API Key** and copy the generated key.
+
+1. Log into your UniFi OS Console (e.g., `https://YOUR_UNIFI_HOST_IP` or your UDM IP).
+2. Click **Console Settings** (gear icon in bottom left) → **System** → **Integrations** (or **Integrations** tab).
+3. Under **API Key**, click **Create New API Key**.
+4. Copy and save the generated key immediately (it is only displayed once).
 
 ---
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Security
+
+See [SECURITY.md](.github/SECURITY.md) for vulnerability reporting.
+
 ## License
-MIT License - Created for the Open Agent Ecosystem.
+
+MIT License - See [LICENSE](LICENSE) for details.
