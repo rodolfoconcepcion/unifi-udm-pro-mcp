@@ -42,7 +42,7 @@
     "firewall",
     "iot"
   ],
-  "author": "Rodolfo Concepcion",
+  "author": "Rodolfo Concepcion <rodolfo.concepcion@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
