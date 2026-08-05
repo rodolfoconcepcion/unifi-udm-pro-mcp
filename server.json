@@ -10,7 +10,7 @@
     {
       "registry_name": "npm",
       "name": "unifi-udm-pro-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtime": "node",
       "runtime_arguments": [],
       "package_arguments": [],
