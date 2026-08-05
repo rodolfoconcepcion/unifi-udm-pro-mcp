@@ -1,6 +1,9 @@
 # UniFi UDM Pro MCP Server (`unifi-udm-pro-mcp`)
 
 [![CI](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/unifi-udm-pro-mcp.svg)](https://www.npmjs.com/package/unifi-udm-pro-mcp)
+[![unifi-udm-pro-mcp MCP server](https://glama.ai/mcp/servers/rodolfoconcepcion/unifi-udm-pro-mcp/badge)](https://glama.ai/mcp/servers/rodolfoconcepcion/unifi-udm-pro-mcp)
+[![Smithery](https://smithery.ai/badge/unifi-udm-pro-mcp)](https://smithery.ai/server/unifi-udm-pro-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MCP Protocol](https://img.shields.io/badge/MCP-v1.0.0-blue.svg)](https://modelcontextprotocol.io)
 [![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A520-339933?logo=node.js&logoColor=white)](https://nodejs.org)
