@@ -1,0 +1,28 @@
+{
+  "$schema": "https://glama.ai/mcp/schema.json",
+  "name": "unifi-udm-pro-mcp",
+  "version": "1.0.1",
+  "description": "High-performance native MCP server for Ubiquiti UniFi Dream Machine (UDM Pro / UDM SE) with 40 tools. Direct local API Key authentication, ultra-low latency, full CRUD.",
+  "build": {
+    "baseImage": "debian:trixie-slim",
+    "buildSteps": [
+      "npm install"
+    ],
+    "cmdArguments": [
+      "mcp-proxy",
+      "--",
+      "node",
+      "index.js"
+    ]
+  },
+  "environmentVariables": {
+    "UNIFI_HOST": {
+      "description": "The IP or hostname of your UniFi OS console (e.g., https://192.168.0.1)",
+      "required": true
+    },
+    "UNIFI_API_KEY": {
+      "description": "Your UniFi Local API Key generated from UDM Control Plane -> Integrations",
+      "required": true
+    }
+  }
+}
