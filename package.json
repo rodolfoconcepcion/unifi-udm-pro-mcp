@@ -1,6 +1,6 @@
 {
   "name": "unifi-udm-pro-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance native Model Context Protocol (MCP) server for Ubiquiti UniFi UDM Pro / UDM SE and UniFi OS Cloud Gateways with 40 tools",
   "main": "index.js",
   "type": "module",

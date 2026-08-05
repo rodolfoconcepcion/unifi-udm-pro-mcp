@@ -1,6 +1,6 @@
 {
   "name": "io.github.rodolfoconcepcion/unifi-udm-pro-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance native MCP server for Ubiquiti UniFi UDM Pro / UDM SE with 40 tools. Direct local API Key authentication, ultra-low latency (10-30ms), full CRUD for Wi-Fi, VLANs, Firewall, Port Forwarding, Clients, and more.",
   "repository": {
     "url": "https://github.com/rodolfoconcepcion/unifi-udm-pro-mcp",
