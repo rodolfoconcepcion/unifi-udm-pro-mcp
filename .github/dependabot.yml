@@ -3,12 +3,13 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 10
+      interval: "daily"
+    open-pull-requests-limit: 25
+    rebase-strategy: "auto"
     labels:
       - "dependencies"
       - "automated"
+      - "security"
     commit-message:
       prefix: "deps"
       include: "scope"
@@ -16,8 +17,8 @@ updates:
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
+    rebase-strategy: "auto"
     labels:
       - "dependencies"
       - "docker"
@@ -26,8 +27,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "daily"
+    rebase-strategy: "auto"
     labels:
       - "dependencies"
       - "ci"
