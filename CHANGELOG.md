@@ -20,6 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Hotspot & QoS**: `unifi_list_vouchers`, `unifi_create_voucher`, `unifi_revoke_voucher`, `unifi_list_user_groups`, `unifi_create_user_group`
 - Native UniFi Local API Key authentication (`X-API-KEY`)
 - Docker support with `node:22-alpine`
-- Smithery.ai configuration
 - CI/CD with GitHub Actions
 - Dependabot for automated dependency updates
