@@ -41,6 +41,21 @@ async function unifiApiRequest(endpoint, method = "GET", body = null) {
   });
 }
 
+// Client updates go to /rest/user/{_id}; resolve the internal id from the MAC first.
+async function findClientId(mac) {
+  const users = await unifiApiRequest(`/stat/user/${mac}`);
+  const id = Array.isArray(users) && users[0]?._id;
+  if (!id) throw new Error(`No client found with MAC ${mac}`);
+  return id;
+}
+
+async function updateClient(mac, body) {
+  const id = await findClientId(mac);
+  const res = await unifiApiRequest(`/rest/user/${id}`, "PUT", body);
+  if (!Array.isArray(res) || res.length === 0) throw new Error(`Failed to update client ${mac}`);
+  return res[0];
+}
+
 const server = new Server(
   { name: "unifi-udm-pro-mcp", version: "5.0.0" },
   { capabilities: { tools: {} } }
@@ -216,12 +231,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "unifi_set_client_name") {
-      await unifiApiRequest(`/upd/user/${args.mac}`, "PUT", { name: args.name });
+      await updateClient(args.mac, { name: args.name });
       return { content: [{ type: "text", text: `Client ${args.mac} renamed to "${args.name}".` }] };
     }
 
     if (name === "unifi_set_client_fixed_ip") {
-      await unifiApiRequest(`/upd/user/${args.mac}`, "PUT", { use_fixedip: args.use_fixed_ip, fixed_ip: args.ip });
+      await updateClient(args.mac, { use_fixedip: args.use_fixed_ip, fixed_ip: args.ip });
       return { content: [{ type: "text", text: `Fixed IP ${args.ip} assigned to client ${args.mac}.` }] };
     }
 
